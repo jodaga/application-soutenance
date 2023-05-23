@@ -1,0 +1,37 @@
+.version
+{
+    color: green;
+    margin-left:180px;
+    margin-bottom: 100px;
+}
+
+.descri
+{
+    
+    margin-left: 200px;
+}
+
+.agrement
+{
+    margin-left: 170px;
+    margin-top: 60px;
+}
+
+.annee-scolaire
+{
+    display : flex;
+}
+#col1,#col2,#col3,#aa,.annee-scolaire{
+    display : flex ; 
+    align-items: center;
+    flex-direction: column;  
+}
+
+.cert
+{
+    color: blue;
+}
+
+
+
+
