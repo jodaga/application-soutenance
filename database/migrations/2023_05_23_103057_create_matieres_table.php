@@ -17,6 +17,13 @@ return new class extends Migration
             $table->integer('credit');
             $table->timestamps();
         });
+
+        // DB::table('matieres')->insert([
+        //     ['codMat' => 'MAT1', 'libelle' => 'Mathématiques', 'credit' => 4],
+        //     ['codMat' => 'PHYS1', 'libelle' => 'Physique', 'credit' => 3],
+        //     ['codMat' => 'INFO1', 'libelle' => 'Informatique', 'credit' => 5],
+        //     // Ajoutez d'autres enregistrements ici
+        // ]);
     }
 
     /**

@@ -11,22 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('inscriptions', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('numIns', 50)->unique();
-            $table->unsignedBigInteger('numMat');
-            $table->unsignedBigInteger('codAnnee');
-            $table->unsignedBigInteger('codFil');
+        Schema::create('admins', function (Blueprint $table) {
+            $table->increments('idAdmin');
+            $table->string('poste');
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('email');
+            $table->string('motDePass');
             $table->timestamps();
         });
     }
-    
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('inscriptions');
+        Schema::dropIfExists('admins');
     }
 };

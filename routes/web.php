@@ -101,5 +101,17 @@ Route::get('/pages/calendar', function () {
     return view('/pages/calendar');
 });
 
+Route::get('/pages/tables/rechercher_bulletins', function(){
+    return view('/pages/tables/rechercher_bulletins');
+});
 
-Route::post('/contact-us', [ReclammationController::class, 'submitForm'])->name('contact.submit');
+
+Route::post('/contact-us', [ReclammationController::class, 'store'])->name('contact.submit');
+
+// Route::get('/pages/examples/data' , [BulletinController::class, 'show']);
+// // Route pour le chargement des données du bulletin
+// Route::get('/pages/tables/data{annee}', 'BulletinController@chargerBulletin');
+
+// // Route pour la recherche de bulletin
+// Route::get('/pages/tables/rechercher_bulletins', 'BulletinController@rechercherBulletin');
+

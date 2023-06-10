@@ -16,6 +16,15 @@ return new class extends Migration
             $table->string('libelleF');
             $table->timestamps();
         });
+
+        // Remplir la table avec des valeurs
+
+        DB::table('filieres')->insert([
+            ['codFil' => 'IG1', 'libelleF' => 'Informatique de gestion'],
+            ['codFil' => 'BFA1', 'libelleF' => 'Banque Finance et Assurance'],
+            ['codFil' => 'MRH3', 'libelleF' => 'Management des Ressoures Humaines'],
+            // Ajoutez d'autres enregistrements ici
+        ]);
     }
 
     /**

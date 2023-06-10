@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class etudiants extends Model
+class Annee extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'numMat';
+    protected $primaryKey = 'codAnnee';
     
-    public function inscriptions():HasMany
+    public function inscriptions() : Hasmany
     {
-        return $this->hasMany(inscription::class, 'numMat');
+        return $this->hasMany(inscription::class, 'codAnnee');
     }
 }

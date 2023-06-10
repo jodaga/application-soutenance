@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class filiere extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'codFil';
+    
+    public function inscriptions():HasMany
+    {
+        return $this->hasMany(inscription::class, 'codFil');
+    }
 }

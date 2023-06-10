@@ -1,8 +1,59 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+    select {
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    /* Style pour les options de la liste de sélection */
+    select option {
+        font-size: 16px;
+    }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .search-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .search-form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .search-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>App-Students | Bulletins</title>
@@ -246,9 +297,6 @@
                   <p>Recover Password</p>
                 </a>
               </li>
-              
-
-      
             </ul>
           </li>
 
@@ -286,90 +334,41 @@
     <!-- /.sidebar -->
   </aside>
 
-
-
-
-
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-                <div class="container-fluid">
-              <div class="row mb-2">
-                <div class="col-md-4 col-sm-6">
-                  <img src="/dist/img/lcs-logo.png" alt="">
-                  <h5 class="version"><span style="color: red;">FOE/ENR/015/-CT</span> <br> Version : 02</h5>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                  <h3 class="cert">CERTIFICAT D'UNITE D'ENSEIGNEMENT DE</h3>
-                  <h3 class="cert"><span class="ml-4">LICENCE PROFESSIONNELLE</span></h3>
-                  <h5 class="ml-5">LES COURS SONOU-CALAVI</h5>
-                  <p class="agrement ml-4">
-                    <span>AGREMENT D'ETAT</span><br>
-                    N°683/MESRS/DC/SGMD/DGES/DPES/CTJ/CJ/SA/030SGG20<br>
-                    1ère Université Certifiée ISO 21001 version 2018 dans l'Afrique<br>
-                    <span class="ml-2">Subsaharienne</span>
-                  </p>
-                </div>
-                <div class="col-md-2 col-sm-12" style="float:left;">
-                  <img src="/dist/img/lcs-iso.png" alt="" class="img-fluid" style="max-height: 10em; max-width: 10em;">
-                </div>
-              </div>
+<section class="content-header">
+<h1>Recherche de Bulletin</h1>
+    <div class="search-form">
+    <form action="/recherche_bulletin" method="GET">
+    <label for="matricule">Numéro de matricule :</label>
+    <input type="text" name="matricule" id="matricule" placeholder="Entrez le numéro de matricule" required>
+    <br>
+    <label for="nom">Nom :</label>
+    <input type="text" name="nom" id="nom" placeholder="Entrez le nom" required>
+    <br>
+    <label for="prenom">Prénom :</label>
+    <input type="text" name="prenom" id="prenom" placeholder="Entrez le prénom" required>
+    <br>
+    <label for="annee">Année universitaire :</label>
+    <select name="annee" id="annee" required>
+        <option value="">Sélectionnez une année universitaire</option>
+        <option value="2022-2023">2022-2023</option>
+        <option value="2021-2022">2021-2022</option>
+        <option value="2021-2022">2020-2021</option>
+        <!-- Ajoutez d'autres options d'années universitaires ici -->
+    </select>
+    <br> <br> <br>
+    <button type="submit">Rechercher</button>
+</form>
 
-              <div class="row">
-                <div class="col-md-6" id="aa">
-                  <h3>BULLETIN DE NOTES</h3>
-                </div>
-              </div>
-            </div><!-- /.container-fluid -->
+    </div>
 
-</section>
+ </section>
 
 
 
-
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-             
-              <!-- /.card-header -->
-              <div class="card-body table-responsive">
-              <table id="bulletin-table" class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>N°</th>
-            <th>Code</th>
-            <th>Unité d'Enseignement(UE)</th>
-            <th>Cr</th>
-            <th>Elements constitutifs d'UE(ECUE)</th>
-            <th>Moy ECUE</th>
-            <th>Moy UE</th>
-            <th>Frèq*</th>
-            <th>Etat</th>
-        </tr>
-    </thead>
-    <tbody>
-      
-    </tbody>
-</table>
-
-
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-        </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
+    
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -408,56 +407,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 <!-- Page specific script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-<script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true,
-      "lengthChange": false,
-      "autoWidth": false,
-      "buttons": [
-        {
-          extend: 'excel',
-          exportOptions: {
-            columns: ':visible'
-          }
-        },
-        {
-          extend: 'pdf',
-          exportOptions: {
-            columns: ':visible'
-          },
-          customize: function (doc) {
-            // Ajouter le contenu de la section "content-header" au PDF
-            var contentHeader = $('.content-header').html();
-            doc.text(contentHeader, 10, 10);
-          }
-        },
-        {
-          extend: 'print',
-          exportOptions: {
-            columns: ':visible'
-          },
-          customize: function (win) {
-            // Ajouter le contenu de la section "content-header" à la fenêtre d'impression
-            var contentHeader = $('.content-header').html();
-            $(win.document.body).prepend(contentHeader);
-          }
-        }
-      ]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script>
 
 </body>
 </html>
